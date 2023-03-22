@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    html {
+        @apply bg-gray-800 text-gray-100 antialiased text-base font-Roboto
+    }
+
+    :focus{
+        @apply shadow-green-500 shadow-sm
+    }
+}
