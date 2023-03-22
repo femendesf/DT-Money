@@ -43,5 +43,5 @@ export const SummaryCard = styled.div<SummaryCardProps>`
         `}
     }
 
-    ${props => props.variant === 'green' && tw`bg-green-400`}
+    ${props => props.variant === 'green' && tw`bg-green-700`}
 `

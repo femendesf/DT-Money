@@ -10,6 +10,7 @@ export const HeaderContent = tw.div`
     max-w-5xl
     m-auto
     px-6
+    
     flex
     justify-between
     items-center
