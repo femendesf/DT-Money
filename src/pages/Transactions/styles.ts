@@ -18,10 +18,7 @@ export const TransactionsTable =  styled.table`
         border-spacing-y-2
     `}
 
-  
-
     td{
-        
         ${tw`
             py-5
             px-8
@@ -32,6 +29,7 @@ export const TransactionsTable =  styled.table`
 
             last:rounded-r-md
             last:rounded-b-md
+          
         `}
     }
     
