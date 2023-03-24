@@ -1,0 +1,30 @@
+{
+    "transactions": [
+        {
+            "id" : 1,
+            "description": "Desenvolvimento de site",
+            "type" : "income",
+            "category" : "Venda",
+            "price" : 14000,
+            "createdAt" : "2023-03-23T21:58:49.455Z"
+        },
+
+        {
+            "id" : 2,
+            "description": "Hamburger",
+            "type" : "outcome",
+            "category" : "Alimentação",
+            "price" : 50,
+            "createdAt" : "2023-03-23T21:30:07.455Z"
+        },
+
+        {
+            "id" : 3,
+            "description": "IPTV",
+            "type" : "income",
+            "category" : "Serviço",
+            "price" : 5550,
+            "createdAt" : "2023-03-23T23:12:06.455Z"
+        }
+    ]
+}
