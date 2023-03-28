@@ -60,10 +60,16 @@ export const Content = styled(Dialog.Content)`
                 mt-6
                 cursor-pointer
 
-                hover:bg-green-700
-                hover:duration-200
-                
+               disabled:opacity-60
+               disabled:cursor-not-allowed
             `}
+
+            &:not(:disabled){
+                ${tw`
+                    hover:bg-green-700
+                    hover:duration-200
+                `}
+            }
         }
     }
 
@@ -93,7 +99,7 @@ interface TransactionTypeButtonProps{
     variant: 'income' | 'outcome'
 }
 
-export const TranactionTypeButton = styled(RadioGroup.Item)<TransactionTypeButtonProps>`
+export const TransactionTypeButton = styled(RadioGroup.Item)<TransactionTypeButtonProps>`
     ${tw`
         bg-gray-700
         p-4

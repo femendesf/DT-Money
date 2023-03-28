@@ -34,13 +34,20 @@ export const SearchFormContainer = styled.form`
             text-green-300
             rounded-md
             font-bold
+            cursor-pointer
 
+            disabled:opacity-60
+            disabled:cursor-not-allowed
+        `}
+
+        &:not(:disabled){
+            ${tw`
+            hover:duration-200
             hover:bg-green-500
             hover:border-green-500
             hover:text-white
-            hover:duration-200
-            
-        `}
+            `}
+        }
 
     }
 
