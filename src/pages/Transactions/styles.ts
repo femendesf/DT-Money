@@ -20,6 +20,7 @@ export const TransactionsTable =  styled.table`
 
     td{
         ${tw`
+            
             py-5
             px-8
             bg-gray-700
@@ -31,6 +32,12 @@ export const TransactionsTable =  styled.table`
             last:rounded-b-md
           
         `}
+
+        button{
+            ${tw`
+                hover:text-red-400
+            `}
+        }
     }
     
 `

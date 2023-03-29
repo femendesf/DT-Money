@@ -1,3 +1,4 @@
+import { Trash } from "phosphor-react";
 import { useContext, useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { Summary } from "../../components/Summary";
@@ -8,7 +9,7 @@ import { PriceHightLight, TransactionsContainer, TransactionsTable } from "./sty
 
 
 export function Transactions(){
-    const {transactions} = useContext(TransactionContext)
+    const {transactions, deleteItem} = useContext(TransactionContext)
     
     return(
         <div>
@@ -31,9 +32,16 @@ export function Transactions(){
                                         </td>
                                         <td>{transactions.category}</td>
                                         <td>{dateFormatter.format(new Date(transactions.createdAt))}</td>
+                                        <td>
+                                            <button onClick={() => deleteItem(transactions.id)}>
+                                                <Trash/>
+                                            </button> 
+                                        </td>
+                                        
                                     </tr>
                                 )
                             })}
+                           
                         </tbody>
                 </TransactionsTable>
             </TransactionsContainer>
