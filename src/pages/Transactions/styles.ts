@@ -25,12 +25,8 @@ export const TransactionsTable =  styled.table`
             px-8
             bg-gray-700
 
-            first:rounded-t-md
-            first:rounded-b-md
-
+            first:rounded-l-md
             last:rounded-r-md
-            last:rounded-b-md
-          
         `}
 
         button{
@@ -38,6 +34,8 @@ export const TransactionsTable =  styled.table`
                 hover:text-red-400
             `}
         }
+
+        
     }
     
 `

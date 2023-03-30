@@ -1,20 +1,28 @@
 {
   "transactions": [
     {
-      "description": "Computador ",
-      "price": 5000,
-      "category": "Compra",
-      "type": "outcome",
-      "createdAt": "2023-03-29T00:05:08.940Z",
-      "id": 5
-    },
-    {
       "description": "Desenvolvimento site",
       "price": 30000,
       "category": "Venda",
       "type": "income",
-      "createdAt": "2023-03-29T00:16:16.877Z",
-      "id": 6
+      "createdAt": "2023-03-30T01:18:57.575Z",
+      "id": 1
+    },
+    {
+      "description": "Pizza",
+      "price": 70,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2023-03-30T01:19:19.367Z",
+      "id": 2
+    },
+    {
+      "description": "Teste",
+      "price": 12,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2023-03-30T01:52:40.635Z",
+      "id": 4
     }
   ]
 }

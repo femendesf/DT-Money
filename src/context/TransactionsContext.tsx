@@ -1,4 +1,5 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
+import { ReactNode, useCallback, useEffect, useState } from "react";
+import { createContext } from "use-context-selector";
 import { api } from "../lib/axios";
 
 interface TransactionsProps{
@@ -35,7 +36,8 @@ export function TransactionsProvider({children} : TransactionsProviderProps){
 
     const [transactions, setTransactions] = useState<TransactionsProps[]>([])
     
-    async function fetchTransactions(query?: string) {
+    const fetchTransactions = useCallback(
+        async (query?: string) => {
 
         const response = await api.get('transactions', {
             params:{
@@ -46,33 +48,39 @@ export function TransactionsProvider({children} : TransactionsProviderProps){
         })
       
         setTransactions(response.data)
-    }
 
-    async function createTransaction(data:createTransactionProps) {
+    },[])
 
-        const {description, category, price, type} = data
+    const createTransaction = useCallback(
 
-        const response = await api.post('transactions', {
-            description,
-            price,
-            category,
-            type,
-            createdAt: new Date()
-        })
+        async (data:createTransactionProps) => {
 
-        setTransactions(state => [response.data, ...state])
-    }
+            const {description, category, price, type} = data
+    
+            const response = await api.post('transactions', {
+                description,
+                price,
+                category,
+                type,
+                createdAt: new Date()
+            })
+    
+            setTransactions(state => [response.data, ...state])
+        },
+        []
+    )
 
     async function deleteItem(id:number) {
 
-        const response = await api.delete(`transactions/${id}`)
-        
-        setTransactions(state => [response.data, ...state ])
+        await api.delete(`transactions/${id}`)
+        const updatedTransactions = transactions.filter(transaction => transaction.id !== id);
+        setTransactions(updatedTransactions);
     }
 
     useEffect(()=>{
        fetchTransactions()
-    }, [])
+    }, [fetchTransactions])
+
 
     return(
         <TransactionContext.Provider 

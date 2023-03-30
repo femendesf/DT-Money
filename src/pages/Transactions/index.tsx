@@ -1,5 +1,5 @@
 import { Trash } from "phosphor-react";
-import { useContext, useEffect, useState } from "react";
+import { useContextSelector } from "use-context-selector";
 import { Header } from "../../components/Header";
 import { Summary } from "../../components/Summary";
 import { TransactionContext } from "../../context/TransactionsContext";
@@ -7,9 +7,13 @@ import { dateFormatter, priceFormatter } from "../../utils/formatter";
 import { SearchForm } from "./components/SearchForm";
 import { PriceHightLight, TransactionsContainer, TransactionsTable } from "./styles";
 
-
 export function Transactions(){
-    const {transactions, deleteItem} = useContext(TransactionContext)
+    const {transactions, deleteItem} = useContextSelector(TransactionContext, (context) => {
+        return {
+            transactions: context.transactions,
+            deleteItem: context.deleteItem
+        }
+    })
     
     return(
         <div>
@@ -26,7 +30,7 @@ export function Transactions(){
                                         <td width='50%'>{transactions.description}</td>
                                         <td>
                                             <PriceHightLight variant={transactions.type}>
-                                                {transactions.type === 'outcome' && '- '}
+                                                {transactions.type === 'outcome' && <span>- </span>}
                                                 {priceFormatter.format(transactions.price)}
                                             </PriceHightLight>
                                         </td>
@@ -48,3 +52,4 @@ export function Transactions(){
         </div>
     )
 }
+
