@@ -38,16 +38,21 @@ export function TransactionsProvider({children} : TransactionsProviderProps){
     
     const fetchTransactions = useCallback(
         async (query?: string) => {
-
-        const response = await api.get('transactions', {
-            params:{
-                _sort: 'createdAt',
-                _order: 'desc',
-                q: query
+            console.log(query)
+            const response = await api.get('transactions', {
+            
+                params:{
+                    _sort: 'createdAt',
+                    _order: 'desc',
+                    q: query
+                }
+            })
+            
+            if(response.data == ''){
+                alert('Não existe nas transações')
+            }else{
+                setTransactions(response.data)
             }
-        })
-      
-        setTransactions(response.data)
 
     },[])
 

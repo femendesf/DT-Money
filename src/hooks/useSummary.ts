@@ -9,7 +9,7 @@ export function useSummary(){
     })
     
     const summary = useMemo(() => {
-
+        
        return transactions.reduce(
             (acc, transaction) =>{
                 if(transaction.type === 'income'){
@@ -26,6 +26,7 @@ export function useSummary(){
                     total: 0
                 }
             )
-    
     }, [transactions])
+
+    return summary
 }
