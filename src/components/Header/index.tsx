@@ -8,7 +8,12 @@ export function Header(){
     return(
     <HeaderContainer>
         <HeaderContent>
-            <img src={logoImg}/>
+            <div className="flex items-center gap-4 text-2xl font-bold">
+                <img src={logoImg}/>
+                <h1>DT-Money</h1>
+                
+            </div>
+            
             
             <Dialog.Root>
                 <Dialog.Trigger asChild>

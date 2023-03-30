@@ -2,7 +2,8 @@
 module.exports = {
   content: [
     './src/**/*.{tsx,ts}',
-    './index.html'
+    './index.html',
+    './README.me'
   ],
   theme: {
     extend: {
