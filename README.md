@@ -2,7 +2,7 @@
  
  Projeto desenvolvido no curso Ignite da Rocketseat. 🚀
 
- Nessa aplicação o usuário pode ter um controle financeiro, adicionando suas transações. Pode também excluir caso tenha criado algo errado.
+ Nessa aplicação o usuário pode ter um controle financeiro adicionando suas transações. Pode também excluir, caso tenha criado algo errado.
 
  ## Screenshot:
 
