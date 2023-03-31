@@ -16,6 +16,7 @@ export const TransactionsTable =  styled.table`
         border-separate
         mt-6
         border-spacing-y-2
+        mb-10
     `}
 
     td{
