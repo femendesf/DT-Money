@@ -14,7 +14,7 @@ export function Transactions(){
             deleteItem: context.deleteItem
         }
     })
-    
+
     return(
         <div>
             <Header/>

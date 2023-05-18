@@ -38,7 +38,7 @@ export function TransactionsProvider({children} : TransactionsProviderProps){
     
     const fetchTransactions = useCallback(
         async (query?: string) => {
-            console.log(query)
+            
             const response = await api.get('transactions', {
             
                 params:{
@@ -68,6 +68,7 @@ export function TransactionsProvider({children} : TransactionsProviderProps){
                 category,
                 type,
                 createdAt: new Date()
+
             })
     
             setTransactions(state => [response.data, ...state])
